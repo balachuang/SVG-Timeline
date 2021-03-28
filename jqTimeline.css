@@ -1,0 +1,100 @@
+/* 整體底色 */
+.jqtl-svg {
+	background-color: rgba(254, 249, 239, 0.1);
+}
+
+/* 格線文字 */
+.jqtl-grid-text {
+	font-size: 14px;
+	font-family: Calibri,"微軟正黑體",sans-serif;
+	font-weight: bolder;
+	fill: white;
+	pointer-events: none;
+}
+
+/* 主要格線 */
+.jqtl-grid-mainline {
+	fill: hsl(196, 64%, 58%);
+	stroke: hsl(196, 64%, 58%);
+	pointer-events: all;
+}
+
+/* 主要格線:hover */
+.jqtl-grid-mainline:hover {
+	fill: hsl(196, 64%, 38%);
+	stroke: hsl(196, 64%, 38%);
+
+    -webkit-filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.4))
+}
+
+/* 次要格線 */
+.jqtl-grid-subline {
+	stroke: hsl(174, 79%, 80%);
+	stroke-width: 1;
+}
+
+/* 事件區塊 */
+.jqtl-grid-event-block {
+	fill-opacity: 0.8;
+	stroke-width: 1;
+}
+
+/* 事件區塊:hover */
+.jqtl-grid-event-block:hover {
+	fill-opacity: 1;
+	stroke-width: 2;
+
+    -webkit-filter: drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.5))
+}
+
+/* 事件單點 */
+.jqtl-grid-event-point {
+	stroke-width: 0;
+}
+
+/* 事件單點:hover */
+.jqtl-grid-event-point:hover {
+	stroke: black;
+	stroke-width: 1;
+}
+
+/* 無事件區塊 */
+.jqtl-mask {
+	fill: rgb(150,150,150);
+	fill-opacity: 0.2;
+}
+
+/* 事件區塊文字 */
+.jqtl-grid-eventrect-text-div {
+	font-size: 12px;
+	font-family: Calibri,"微軟正黑體",sans-serif;
+	overflow: hidden;
+	word-wrap: break-word;
+	word-break: normal;
+	display: flex;
+	align-items: center;
+	padding-left: 10px;
+	width: 100%;
+	pointer-events: none;
+}
+
+/* 事件單點文字 */
+.jqtl-grid-eventpoint-text-div {
+	font-size: 12px;
+	font-family: Calibri,"微軟正黑體",sans-serif;
+	overflow: hidden;
+	border-style: solid;
+	border-width: 1px;
+	padding-left: 5px;
+}
+
+/* 事件單點導線 */
+.jqtl-grid-event-textline {
+	stroke-width: 1;
+}
+
+foreignObject {
+	pointer-events: none;
+}
