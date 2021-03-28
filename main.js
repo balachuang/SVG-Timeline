@@ -1,5 +1,3 @@
-/* test */
-
 $(document).ready(function(){
 	$('#csv-input').click(getCsvFName);
 });
