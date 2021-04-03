@@ -3,7 +3,7 @@
 ** jqTimeline.js 可以根據 JSON 內容畫出年表. 並依事件類別分類. **
 
 ## 說明
-jqTimeline.js 可以在 <DIV> 中畫出年表. 使用者透過 JSON 格式將事件內容加入後, jqTimeline.js 會自動產生對應的年表圖, 同時加入捲動及縮放功能.
+jqTimeline.js 可以在 HTML 的 &lt;DIV&gt; 元件中畫出年表. 使用者透過 JSON 格式將事件內容加入後, jqTimeline.js 會自動產生對應的年表圖, 同時加入捲動及縮放功能.
 
 ## 使用方式
 ```
