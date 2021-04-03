@@ -8,7 +8,7 @@
 	var _svgGridSubsObj = null;
 	var _svgEventBlockObj = null;
 	var _svgEventPointObj = null;
-	var _svg = {width:0, height:0, padding:9, drawRect:{top:0, bottom:0, left:0, right:0}};
+	var _svg = {pageX:0, pageY:0, width:0, height:0, padding:9, drawRect:{top:0, bottom:0, left:0, right:0}};
 	var _dateRange = {	start:      new Date(9999,9,9), end:      new Date(1111,1,1),
 						eventStart: new Date(9999,9,9), eventEnd: new Date(1111,1,1)};
 	var _maxDayRange = 10000 * 365 * 86400 * 1000; // 10,000 years
@@ -48,6 +48,8 @@
 		_param = null;
 
 		// Create SVG block inside DIV
+		_svg.pageX  = $(this).position().left;
+		_svg.pageY  = $(this).position().top;
 		_svg.width  = $(this).width();
 		_svg.height = $(this).height();
 		_svg.drawRect.top    = _svg.padding;
@@ -69,7 +71,7 @@
 		_svgObj.append(_svgEventBlockObj);
 		_svgObj.append(_svgEventPointObj);
 
-		$(this).bind('mousewheel', handleMouseWheelUp);
+		$(this).bind('mousewheel', handleMouseWheelScroll);
 
 		return this;
 	};
@@ -372,12 +374,19 @@
 	}
 
 	// mouse wheel event handler
-	function handleMouseWheelUp(e)
+	function handleMouseWheelScroll(e)
 	{
+		// 計算要變化的時間長度
 		var timeDiff = _dateRange.end.getTime() - _dateRange.start.getTime();
 		var timeDelta = Math.round(timeDiff / 10);
 
 		if (e.shiftKey) timeDelta /= 10;
+
+		// 計算以目前游標為中心的上下變化
+		var h1 = e.pageY - _svg.pageY;
+		var h2 = _svg.pageY + _svg.height - e.pageY;
+		var timeDelta1 = timeDelta * h1 / _svg.height;
+		var timeDelta2 = timeDelta * h2 / _svg.height;
 
 		if (e.ctrlKey)
 		{
@@ -386,14 +395,16 @@
 			{
 				if (timeDiff > _minDayRange)
 				{
-					_dateRange.start.setTime( _dateRange.start.getTime() + timeDelta / 2);
-					_dateRange.end.setTime(   _dateRange.end.getTime()   - timeDelta / 2);
+					//_dateRange.start.setTime( _dateRange.start.getTime() + timeDelta / 2);
+					//_dateRange.end.setTime(   _dateRange.end.getTime()   - timeDelta / 2);
+					_dateRange.start.setTime( _dateRange.start.getTime() + timeDelta1);
+					_dateRange.end.setTime(   _dateRange.end.getTime()   - timeDelta2);
 				}
 			}else{
 				if (timeDiff < _maxDayRange)
 				{
-					_dateRange.start.setTime( _dateRange.start.getTime() - timeDelta / 2);
-					_dateRange.end.setTime(   _dateRange.end.getTime()   + timeDelta / 2);
+					_dateRange.start.setTime( _dateRange.start.getTime() - timeDelta1);
+					_dateRange.end.setTime(   _dateRange.end.getTime()   + timeDelta2);
 				}
 			}
 		}else{
@@ -406,8 +417,8 @@
 				_dateRange.end.setTime(  _dateRange.end.getTime()   + timeDelta);
 			}
 		}
-		console.log('from: ' + _dateRange.start);
-		console.log('  to: ' + _dateRange.end);
+//		console.log('from: ' + _dateRange.start);
+//		console.log('  to: ' + _dateRange.end);
 
 		$(this).jqRefreshTimeline();
 	}
