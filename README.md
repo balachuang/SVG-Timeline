@@ -22,7 +22,7 @@ jqTimeline.js 可以在 HTML 的 &lt;DIV&gt; 元件中利用 &lt;SVG&gt; 元件�
 1. 按著 Ctrl 並滾動滑鼠滾輪, 可縮放年表.
 1. 按著 Shift+Ctrl 並滾動滑鼠滾輪, 可慢速縮放年表.
 
-## Source Code
+## Source Code Example
 ```
 <html>
     <body>
@@ -30,27 +30,27 @@ jqTimeline.js 可以在 HTML 的 &lt;DIV&gt; 元件中利用 &lt;SVG&gt; 元件�
     </body>
 </html>
 <script>
-    var eventStr =
-        '[ { "time1" : "Event Start Time",                  ' +
-        '    "time2" : "Event End Time",                    ' +
-        '    "Cate"  : "Category",                          ' +
-        '    "Item"  : "Event",                             ' +
-        '    "Desc"  : "Description",                       ' +
-        '    "Base"  : "Put this Event to Base Category"    ' +
-        '  },                                               ' +
-        '  { "time1" : "2021/01/01",                        ' +
-        '    "time2" : "",                                  ' +
-        '    "Cate"  : "Festival",                          ' +
-        '    "Item"  : "2021 New Year",                     ' +
-        '    "Desc"  : "2021 New Year",                     ' +
-        '    "Base"  : "No"                                 ' +
-        '  }                                                ' +
-        ']                                                  ' ;
+    var eventJson =
+        [ { "time1" : "Event Start Time",
+            "time2" : "Event End Time",
+            "Cate"  : "Category",
+            "Item"  : "Event",
+            "Desc"  : "Description",
+            "Base"  : "Put this Event to Base Category"
+          },
+          { "time1" : "2021/01/01",
+            "time2" : "",
+            "Cate"  : "Festival",
+            "Item"  : "2021 New Year",
+            "Desc"  : "2021 New Year",
+            "Base"  : "No"
+          }
+        ];
 
         var timeline = $('#timeline-container').jqTimeline();
         timeline.jqSetTimelineEvent({
-            events:       JSON.parse(eventStr),
-            firstRowNum:  1
+            events: eventJson,
+            firstRowNum: 1
         });
 </script>
 ```
