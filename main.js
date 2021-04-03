@@ -1,4 +1,14 @@
 $(document).ready(function(){
+	var params = location.search;
+	if (params.length > 0)
+	{
+		params = params.substring(1).split('&');
+		params.forEach(param => {
+			var kv = param.split('=');
+			if (kv[0] == 'csv') $('#csv-fname').val(decodeURIComponent(kv[1]));
+		});
+	}
+
 	$('#csv-input').click(getCsvFName);
 });
 

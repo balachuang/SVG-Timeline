@@ -1,2 +1,0 @@
-Google CSV Example -
-https://docs.google.com/spreadsheets/d/e/2PACX-1vS0GrcaxoYn3Jc77B5bWnO2-RHu5_HoRYI7DNG0whpYRlyA6juHdCUhjrnYAFzmllnM-v76G6t5vEdU/pub?gid=0&single=true&output=tsv
