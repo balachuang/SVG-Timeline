@@ -26,30 +26,32 @@ function getCsvFName()
 
 function readCsv(csvFName)
 {
-	var eventStr =
-		'{"time1" : "Event Start Time",' +
-		' "time2" : "Event End Time (keep empty if these is no End Time)",' +
-		' "Cate"  : "Category",' +
-		' "Item"  : "Event",' +
-		' "Desc"  : "Description",' +
-		' "Base"  : "Put this Event to Base Category"}' ;
+	var eventJsonAry = [{
+		"time1" : "Event Start Time",
+		"time2" : "Event End Time (keep empty if these is no End Time)",
+		"Cate"  : "Category",
+		"Item"  : "Event",
+		"Desc"  : "Description",
+		"Base"  : "Put this Event to Base Category"
+	}];
 
 	$.get(csvFName, function(data) {
 		var evenAry = data.split('\r\n');
 		for (var n=1; n<evenAry.length; ++n) {
 			var evenData = evenAry[n].split('\t');
-			eventStr +=
-				',{"time1" : "' + evenData[0] + '",' +
-				'  "time2" : "' + evenData[1] + '",' +
-				'  "Cate"  : "' + evenData[2] + '",' +
-				'  "Item"  : "' + evenData[3] + '",' +
-				'  "Desc"  : "' + evenData[4] + '",' +
-				'  "Base"  :  ' + ((evenData[5]=='Yes') ? true : false) + '}' ;
+			var eventJson = {
+				"time1" : evenData[0],
+				"time2" : evenData[1],
+				"Cate"  : evenData[2],
+				"Item"  : evenData[3],
+				"Desc"  : evenData[4],
+				"Base"  : ((evenData[5]=='Yes') ? true : false)
+			};
+			eventJsonAry.push(eventJson);
 		}
-		eventStr = '[' + eventStr + ']';
 
 		timeline.jqSetTimelineEvent({
-			events:       JSON.parse(eventStr),
+			events:       eventJsonAry,
 			firstRowNum:  1
 		});
 	});
