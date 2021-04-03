@@ -90,6 +90,12 @@
 		}
 		if ((_param.firstRowNum < 0) || (_param.firstRowNum >= _param.events.length)) _param.firstRowNum = 0;
 
+		// reset date range.
+		_dateRange.start = new Date(9999,9,9);
+		_dateRange.end   = new Date(1111,1,1);
+		_dateRange.eventStart = new Date(9999,9,9);
+		_dateRange.eventEnd   = new Date(1111,1,1);
+
 		// prepare event content
 		for (var n=_param.firstRowNum; n<_param.events.length; ++n)
 		{

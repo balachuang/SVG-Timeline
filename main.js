@@ -1,3 +1,5 @@
+var timeline = null;
+
 $(document).ready(function(){
 	var params = location.search;
 	if (params.length > 0)
@@ -8,6 +10,8 @@ $(document).ready(function(){
 			if (kv[0] == 'csv') $('#csv-fname').val(decodeURIComponent(kv[1]));
 		});
 	}
+
+	timeline = $('#timeline-container').jqTimeline();
 
 	$('#csv-input').click(getCsvFName);
 });
@@ -44,7 +48,6 @@ function readCsv(csvFName)
 		}
 		eventStr = '[' + eventStr + ']';
 
-		var timeline = $('#timeline-container').jqTimeline();
 		timeline.jqSetTimelineEvent({
 			events:       JSON.parse(eventStr),
 			firstRowNum:  1
