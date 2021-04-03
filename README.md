@@ -14,18 +14,21 @@ jqTimeline.js 可以在 <DIV> 中畫出年表. 使用者透過 JSON 格式將事
 </html>
 <script>
 	var eventStr =
-		'[{"time1" : "Event Start Time",' +
-		'  "time2" : "Event End Time (keep empty if these is no End Time)",' +
-		'  "Cate"  : "Category",' +
-		'  "Item"  : "Event",' +
-		'  "Desc"  : "Description",' +
-		'  "Base"  : "Put this Event to Base Category"},' +
-		' {"time1" : "2021/01/01",' +
-		'  "time2" : "",' +
-		'  "Cate"  : "節日",' +
-		'  "Item"  : "新年",' +
-		'  "Desc"  : "2021新年",' +
-		'  "Base"  : "No"}]' ;
+		'[ { "time1" : "Event Start Time",                  ' +
+		'    "time2" : "Event End Time",                    ' +
+		'    "Cate"  : "Category",                          ' +
+		'    "Item"  : "Event",                             ' +
+		'    "Desc"  : "Description",                       ' +
+		'    "Base"  : "Put this Event to Base Category"    ' +
+        '  },                                               ' +
+		'  { "time1" : "2021/01/01",                        ' +
+		'    "time2" : "",                                  ' +
+		'    "Cate"  : "Festival",                          ' +
+		'    "Item"  : "2021 New Year",                     ' +
+		'    "Desc"  : "2021 New Year",                     ' +
+		'    "Base"  : "No"                                 ' +
+        '  }                                                ' +
+        ']                                                  ' ;
 
 		var timeline = $('#timeline-container').jqTimeline();
 		timeline.jqSetTimelineEvent({
@@ -36,11 +39,11 @@ jqTimeline.js 可以在 <DIV> 中畫出年表. 使用者透過 JSON 格式將事
 ```
 
 ## JSON 欄位說明
-| **欄位名稱** | **說明**                                                 |
-| -------|------------------------------------------------------|
-| time1  | 事件發生時間 (yyyy/mm/dd, 不可省略)                      |
-| time2  | 事件結束時間 (yyyy/mm/dd, 可省略, 若事件未結束, 可輸入 TBD) |
-| Cate   | 事件類別                                               |
-| Item   | 事件標題                                               |
-| Desc   | 事件說明 (目前還沒有畫上去)                               |
-| Base   | 是否強制畫在最左側 (Yes / No)                            |
+| **欄位名稱** | **說明**                                              |
+| ------------|------------------------------------------------------|
+| time1       | 事件發生時間 (yyyy/mm/dd, 不可省略)                      |
+| time2       | 事件結束時間 (yyyy/mm/dd, 可省略, 若事件未結束, 可輸入 TBD) |
+| Cate        | 事件類別                                               |
+| Item        | 事件標題                                               |
+| Desc        | 事件說明 (目前還沒有畫上去)                               |
+| Base        | 是否強制畫在最左側 (Yes / No)                            |
