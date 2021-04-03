@@ -30,21 +30,12 @@ jqTimeline.js 可以在 <DIV> 中畫出年表. 使用者透過 JSON 格式將事
 		var timeline = $('#timeline-container').jqTimeline();
 		timeline.jqSetTimelineEvent({
 			events:       JSON.parse(eventStr),
-			firstRowNum:  1 // data start at row 1
+			firstRowNum:  1
 		});
 </script>
 ```
 
-## JSON 格式
-Example:
-[{ "time1" : "2021/01/01",
-   "time2" : "",
-   "Cate"  : "節日",
-   "Item"  : "新年",
-   "Desc"  : "2021新年",
-   "Base"  : "No" },
- {...}]
-
+## JSON 欄位說明
 | 欄位名稱 | 說明                                                 |
 | -------|------------------------------------------------------|
 | time1  | 事件發生時間 (yyyy/mm/dd, 不可省略)                      |
