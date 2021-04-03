@@ -6,7 +6,7 @@
 jqTimeline.js 可以在 <DIV> 中畫出年表. 使用者透過 JSON 格式將事件內容加入後, jqTimeline.js 會自動產生對應的年表圖, 同時加入捲動及縮放功能.
 
 ## 使用方式
----
+```
 <html>
     <body>
         <div id="timeline-container"></div>
@@ -33,7 +33,7 @@ jqTimeline.js 可以在 <DIV> 中畫出年表. 使用者透過 JSON 格式將事
 			firstRowNum:  1 // data start at row 1
 		});
 </script>
----
+```
 
 ## JSON 格式
 Example:
