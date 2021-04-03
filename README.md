@@ -13,28 +13,28 @@ jqTimeline.js 可以在 <DIV> 中畫出年表. 使用者透過 JSON 格式將事
     </body>
 </html>
 <script>
-	var eventStr =
-		'[ { "time1" : "Event Start Time",                  ' +
-		'    "time2" : "Event End Time",                    ' +
-		'    "Cate"  : "Category",                          ' +
-		'    "Item"  : "Event",                             ' +
-		'    "Desc"  : "Description",                       ' +
-		'    "Base"  : "Put this Event to Base Category"    ' +
-		'  },                                               ' +
-		'  { "time1" : "2021/01/01",                        ' +
-		'    "time2" : "",                                  ' +
-		'    "Cate"  : "Festival",                          ' +
-		'    "Item"  : "2021 New Year",                     ' +
-		'    "Desc"  : "2021 New Year",                     ' +
-		'    "Base"  : "No"                                 ' +
-		'  }                                                ' +
-		']                                                  ' ;
+    var eventStr =
+        '[ { "time1" : "Event Start Time",                  ' +
+        '    "time2" : "Event End Time",                    ' +
+        '    "Cate"  : "Category",                          ' +
+        '    "Item"  : "Event",                             ' +
+        '    "Desc"  : "Description",                       ' +
+        '    "Base"  : "Put this Event to Base Category"    ' +
+        '  },                                               ' +
+        '  { "time1" : "2021/01/01",                        ' +
+        '    "time2" : "",                                  ' +
+        '    "Cate"  : "Festival",                          ' +
+        '    "Item"  : "2021 New Year",                     ' +
+        '    "Desc"  : "2021 New Year",                     ' +
+        '    "Base"  : "No"                                 ' +
+        '  }                                                ' +
+        ']                                                  ' ;
 
-		var timeline = $('#timeline-container').jqTimeline();
-		timeline.jqSetTimelineEvent({
-			events:       JSON.parse(eventStr),
-			firstRowNum:  1
-		});
+        var timeline = $('#timeline-container').jqTimeline();
+        timeline.jqSetTimelineEvent({
+            events:       JSON.parse(eventStr),
+            firstRowNum:  1
+        });
 </script>
 ```
 
