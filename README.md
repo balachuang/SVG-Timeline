@@ -2,7 +2,7 @@
 
 ** jqTimeline.js 可以根據 JSON 內容畫出年表. 並依事件類別分類. **
 
-Demo Page: https://balachuang.github.io/SVG-Timeline/TimeLine.html
+Demo Page: https://balachuang.github.io/SVG-Timeline/TimeLine.html?csv=https://docs.google.com/spreadsheets/d/e/2PACX-1vRtdDkP6oHl-rHbLBgChA6PiiYweOg3y7UgLIPCl-9z7LhoLpafBZ-0QMzwfOp6LrbIepuy-N5aGuDz/pub?gid=0&single=true&output=tsv
 
 
 ## 說明
@@ -17,7 +17,7 @@ jqTimeline.js 可以在 HTML 的 &lt;DIV&gt; 元件中利用 &lt;SVG&gt; 元件�
 | main.js         | 呼叫 jqTimeline.js 範例         |
 
 ## 範例程操作說明
-1. 上方輸入框輸入 CSV 檔網址, 或直在網址列使用 ?csv=xxx 載入 CSV
+1. 上方輸入框輸入 CSV 檔網址 (Tab 分格), 或直在網址列使用 ?csv=xxx 載入 CSV
 1. 點選輸入框右方的 Update 按鈕, 即可畫出年表.
 1. Click 事件區塊, 可將該區塊放大至全畫面.
 1. 滾動滑鼠滾輪, 可捲動年表.
